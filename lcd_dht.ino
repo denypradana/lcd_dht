@@ -69,7 +69,7 @@ void loop() {
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
     lcd.setCursor(0, 0);
-    lcd.print("Hujan Lebat");
+    lcd.print("Berembun/Kabut");
     lcd.setCursor(0, 1);
     lcd.write(2);
     lcd.setCursor(2, 1);
@@ -109,7 +109,7 @@ void loop() {
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
     lcd.setCursor(0, 0);
-    lcd.print("Mendung");
+    lcd.print("Hujan Lebat");
     lcd.setCursor(0, 1);
     lcd.write(2);
     lcd.setCursor(2, 1);
