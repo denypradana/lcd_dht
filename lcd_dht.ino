@@ -41,13 +41,26 @@ void setup() {
 
   lcd.begin(16, 2);
   dht.begin();
-
-  lcd.setCursor(1, 0);
-  lcd.print("PREDIKSI CUACA");
+  pinMode(pinRelay, OUTPUT);
+  digitalWrite(pinRelay, HIGH);
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("<PREDIKSI-CUACA>");
   lcd.setCursor(0, 1);
-  lcd.print("Inisialisasi....");
-
+  lcd.print("By: Deny Pradana");
   delay(5000);
+  tone(buzzer, 3000);
+  delay(100);
+  noTone(buzzer);
+  lcd.clear();
+  lcd.setCursor(2, 0);
+  lcd.print("INISIALISASI");
+  lcd.setCursor(2, 1);
+  lcd.print("HARAP TUNGGU");
+  digitalWrite(pinRelay, LOW); // menghidupkan relay
+  delay(200);
+  digitalWrite(pinRelay, HIGH); // mematikan relay
+  delay(4700);
   tone(buzzer, 3000);
   delay(100);
   tone(buzzer, 2000);
@@ -56,7 +69,7 @@ void setup() {
   delay(100);
   
   noTone(buzzer);
-  pinMode(pinRelay, OUTPUT);
+  
   digitalWrite(pinRelay, HIGH); // mematikan relay
 }
 
@@ -72,7 +85,7 @@ void loop() {
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
-    lcd.setCursor(0, 0);
+    lcd.setCursor(1, 0);
     lcd.print("Berembun/Kabut");
     lcd.setCursor(0, 1);
     lcd.write(2);
@@ -93,7 +106,7 @@ void loop() {
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
-    lcd.setCursor(0, 0);
+    lcd.setCursor(1, 0);
     lcd.print("Mendung/Hujan");
     lcd.setCursor(0, 1);
     lcd.write(2);
@@ -114,7 +127,7 @@ void loop() {
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
-    lcd.setCursor(0, 0);
+    lcd.setCursor(2, 0);
     lcd.print("Hujan Lebat");
     lcd.setCursor(0, 1);
     lcd.write(2);
@@ -135,7 +148,7 @@ void loop() {
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
-    lcd.setCursor(0, 0);
+    lcd.setCursor(2, 0);
     lcd.print("Dingin/Sejuk");
     lcd.setCursor(0, 1);
     lcd.write(2);
@@ -156,7 +169,7 @@ void loop() {
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
-    lcd.setCursor(0, 0);
+    lcd.setCursor(1, 0);
     lcd.print("Berawan/Cerah");
     lcd.setCursor(0, 1);
     lcd.write(2);
@@ -177,7 +190,7 @@ void loop() {
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
-    lcd.setCursor(0, 0);
+    lcd.setCursor(2, 0);
     lcd.print("Cerah/Panas");
     lcd.setCursor(0, 1);
     lcd.write(2);
