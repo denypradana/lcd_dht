@@ -1,7 +1,7 @@
 #include <DHT.h>
 #include <LiquidCrystal.h>
 
-#define DHTPIN 8  //menggunakan pin 1 untuk pemasangan sensornya
+#define DHTPIN 8  //menggunakan pin 8 untuk pemasangan sensornya
 #define DHTTYPE DHT11 //memilih tipe DHT11, bisa diubah menjadi DHT22, DHT21
 
 DHT dht(DHTPIN, DHTTYPE);
