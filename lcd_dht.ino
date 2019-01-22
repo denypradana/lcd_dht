@@ -9,6 +9,7 @@ DHT dht(DHTPIN, DHTTYPE);
 // Setting LCD RS E D4 D5 D6 D7
 LiquidCrystal lcd(6, 7, 9, 10, 11, 12);
 const int buzzer = 4;
+int pinRelay =2 ;
 
 //Icon di arduino
 byte icoterm[8] = //icon for termometer
@@ -53,8 +54,10 @@ void setup() {
   delay(100);
   tone(buzzer, 1000);
   delay(100);
-
+  
   noTone(buzzer);
+  pinMode(pinRelay, OUTPUT);
+  digitalWrite(pinRelay, HIGH);
 }
 
 void loop() {
@@ -65,6 +68,7 @@ void loop() {
     tone(buzzer, 100);
     delay(50);
     noTone(buzzer);
+    digitalWrite(pinRelay, HIGH);
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
@@ -85,6 +89,7 @@ void loop() {
     tone(buzzer, 300);
     delay(50);
     noTone(buzzer);
+    digitalWrite(pinRelay, HIGH);
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
@@ -105,6 +110,7 @@ void loop() {
     tone(buzzer, 500);
     delay(50);
     noTone(buzzer);
+    digitalWrite(pinRelay, HIGH);
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
@@ -125,6 +131,7 @@ void loop() {
     tone(buzzer, 100);
     delay(50);
     noTone(buzzer);
+    digitalWrite(pinRelay, HIGH);
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
@@ -145,6 +152,7 @@ void loop() {
     tone(buzzer, 300);
     delay(50);
     noTone(buzzer);
+    digitalWrite(pinRelay, HIGH);
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
@@ -165,6 +173,7 @@ void loop() {
     tone(buzzer, 500);
     delay(50);
     noTone(buzzer);
+    digitalWrite(pinRelay, LOW);
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
