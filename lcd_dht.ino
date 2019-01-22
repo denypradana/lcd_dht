@@ -42,8 +42,8 @@ void setup() {
   lcd.begin(16, 2);
   dht.begin();
 
-  lcd.setCursor(2, 0);
-  lcd.print("SENSOR CUACA");
+  lcd.setCursor(1, 0);
+  lcd.print("PREDIKSI CUACA");
   lcd.setCursor(0, 1);
   lcd.print("Inisialisasi....");
 
