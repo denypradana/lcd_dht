@@ -8,11 +8,11 @@ DHT dht(DHTPIN, DHTTYPE);
 
 // Setting LCD RS E D4 D5 D6 D7
 LiquidCrystal lcd(6, 7, 9, 10, 11, 12);
-const int buzzer = 4;
-int pinRelay =2 ;
+const int buzzer = 4; // menggunakan pin 4 untuk buzzer
+int pinRelay =2 ; // menggunakan pin 2 untuk relay
 
 //Icon di arduino
-byte icoterm[8] = //icon for termometer
+byte icoterm[8] = //icon termometer
 {
   B00100,
   B01010,
@@ -24,7 +24,7 @@ byte icoterm[8] = //icon for termometer
   B01110
 };
 
-byte icohum[8] = //icon for humidity
+byte icohum[8] = //icon humidity
 {
   B00100,
   B00100,
@@ -57,7 +57,7 @@ void setup() {
   
   noTone(buzzer);
   pinMode(pinRelay, OUTPUT);
-  digitalWrite(pinRelay, HIGH);
+  digitalWrite(pinRelay, HIGH); // mematikan relay
 }
 
 void loop() {
@@ -68,7 +68,7 @@ void loop() {
     tone(buzzer, 100);
     delay(50);
     noTone(buzzer);
-    digitalWrite(pinRelay, HIGH);
+    digitalWrite(pinRelay, HIGH); // mematikan relay
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
@@ -89,7 +89,7 @@ void loop() {
     tone(buzzer, 300);
     delay(50);
     noTone(buzzer);
-    digitalWrite(pinRelay, HIGH);
+    digitalWrite(pinRelay, HIGH); // mematikan relay
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
@@ -110,7 +110,7 @@ void loop() {
     tone(buzzer, 500);
     delay(50);
     noTone(buzzer);
-    digitalWrite(pinRelay, HIGH);
+    digitalWrite(pinRelay, HIGH); // mematikan relay
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
@@ -131,7 +131,7 @@ void loop() {
     tone(buzzer, 100);
     delay(50);
     noTone(buzzer);
-    digitalWrite(pinRelay, HIGH);
+    digitalWrite(pinRelay, HIGH); // mematikan relay
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
@@ -152,7 +152,7 @@ void loop() {
     tone(buzzer, 300);
     delay(50);
     noTone(buzzer);
-    digitalWrite(pinRelay, HIGH);
+    digitalWrite(pinRelay, HIGH); // mematikan relay
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
@@ -173,7 +173,7 @@ void loop() {
     tone(buzzer, 500);
     delay(50);
     noTone(buzzer);
-    digitalWrite(pinRelay, LOW);
+    digitalWrite(pinRelay, LOW); // menghidupkan relay
     lcd.clear();
     lcd.createChar(1, icoterm);
     lcd.createChar(2, icohum);
