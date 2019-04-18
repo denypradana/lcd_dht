@@ -1,5 +1,6 @@
 #include <DHT.h>
-#include <LiquidCrystal.h>
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 #define DHTPIN 8  //menggunakan pin 8 untuk pemasangan sensornya
 #define DHTTYPE DHT11 //memilih tipe DHT11, bisa diubah menjadi DHT22, DHT21
@@ -7,7 +8,7 @@
 DHT dht(DHTPIN, DHTTYPE);
 
 // Setting LCD RS E D4 D5 D6 D7
-LiquidCrystal lcd(6, 7, 9, 10, 11, 12);
+//LiquidCrystal lcd(6, 7, 9, 10, 11, 12);
 const int buzzer = 4; // menggunakan pin 4 untuk buzzer
 int pinRelay =2 ; // menggunakan pin 2 untuk relay
 
